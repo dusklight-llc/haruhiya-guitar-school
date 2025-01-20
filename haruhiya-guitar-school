@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はるひ屋ギター教室</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        :root {
+            --primary: #2d3436;
+            --accent: #e17055;
+            --text: #2d3436;
+            --background: #f5f6fa;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a363d9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+        
+        header {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cta {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(225, 112, 85, 0.3);
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(225, 112, 85, 0.4);
+        }
+
+        .special-offer {
+            background: var(--gradient);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-offer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.1) 50%, transparent 52%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .price-info {
+            background: white;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .special-offer,
+            .price-info,
+            .contact-info {
+                padding: 2rem;
+            }
+        }
+
+        /* アニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content fade-in">
+            <h1>はるひ屋ギター教室</h1>
+            <p>音楽と美味しい時間が織りなす特別な空間</p>
+        </div>
+    </header>
+
+    <div class="hero fade-in">
+        <h2>MUSIC & LIFE</h2>
+        <p>あなたの音楽生活をサポートします</p>
+        <a href="#contact" class="cta">無料体験レッスンを予約する</a>
+    </div>
+
+    <div class="container">
+        <div class="special-offer fade-in">
+            <h2>🎸 Special Offer 🎸</h2>
+            <p>当店でお食事やお飲み物をご注文いただいた方は<br>
+            <strong>ギターレッスンが無料</strong>でご受講いただけます！</p>
+            <small>※1ドリンク以上のご注文が必要です</small>
+        </div>
+
+        <div class="price-info fade-in">
+            <h2>Lesson Fee</h2>
+            <p>通常レッスン：1時間 ¥1,000</p>
+            <small>※飲食なしの場合の料金です</small>
+        </div>
+
+        <div class="features">
+            <div class="feature fade-in">
+                <h3>For Beginners</h3>
+                <p>楽器が初めての方でも安心。基礎から丁寧にお教えします。まずは気軽に体験レッスンからスタート！</p>
+            </div>
+            <div class="feature fade-in">
+                <h3>Lesson Menu</h3>
+                <p>アコースティックギター、エレキギターなど、あなたの好みに合わせたレッスンをご用意しています。</p>
+            </div>
+            <div class="feature fade-in">
+                <h3>Relax Space</h3>
+                <p>飲食スペースでゆっくりとした時間を過ごしながら、音楽の素晴らしさを体験できます。</p>
+            </div>
+        </div>
+
+        <section id="contact" class="contact-info fade-in">
+            <h2>Contact & Access</h2>
+            <p>📞 電話：090-2858-0551</p>
+            <p>📍 住所：〒836-0046<br>福岡県大牟田市本町１丁目4-6<br>スパイスカレーはるひ屋</p>
+            <a href="tel:09028580551" class="cta">電話をかける</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 はるひ屋ギター教室</p>
+    </footer>
+</body>
+</html>
